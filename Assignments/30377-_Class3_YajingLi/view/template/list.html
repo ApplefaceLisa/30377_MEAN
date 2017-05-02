@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list of flight</title>
+</head>
+<body>
+<ul ng-repeat="flight in (flights | flightJFK:onlyJFK)" ng-class-even="{bubble : checkboxModel.bubble, 'text-danger' : checkboxModel.danger}">
+    <li>{{flight.ident}}</li>
+    <li>{{flight.code}}</li>
+    <li>{{flight.dep}}</li>
+    <li>{{flight.arriv}}</li>
+    <li>{{flight.code | justCode}}</li>
+</ul>
+</body>
+</html>
