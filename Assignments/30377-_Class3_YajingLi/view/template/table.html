@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table of flight</title>
+</head>
+<body>
+<div class="panel">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Ident</th>
+            <th>Type</th>
+            <th>From</th>
+            <th>Arrive</th>
+            <th>Code</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="flight in (flights | flightJFK:onlyJFK)" ng-class-even="{bubble : checkboxModel.bubble, 'text-danger' : checkboxModel.danger}">
+            <td>{{flight.ident}}</td>
+            <td>{{flight.code}}</td>
+            <td>{{flight.dep}}</td>
+            <td>{{flight.arriv}}</td>
+            <td>{{flight.code | justCode}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
