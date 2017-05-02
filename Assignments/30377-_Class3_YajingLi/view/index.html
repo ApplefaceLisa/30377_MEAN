@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UCSC Demo Flight App</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../myCSS.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="module1" ng-controller="module1Ctrl">
+<div class="page-header">
+    <h1>UCSC Demo Flight App</h1>
+</div>
+<form>
+    <div class="radio">
+      <div>
+          <label>
+              <input type="radio" value="table" ng-click="changeMode($event)"> Click to show {{mode}}
+          </label>
+      </div>
+    </div>
+    <div class="checkbox">
+        <div>
+            <label>
+                <input type="checkbox" ng-model="onlyJFK" value="Jfk"> Show only JFK
+            </label>
+        </div>
+    </div>
+</form>
+
+<div class="well">
+    <div ng-repeat="button in checkBoxs">
+        <label>
+            <input type="checkbox" ng-model="checkboxModel[button]" value="{{button}}"> {{button}}
+        </label>
+    </div>
+</div>
+
+<div ng-include src="toggleTemplate()"></div>
+
+<!--<label for="myText">Please enter some value</label>
+<input type="text" id="myText" placeholder="Please Enter the value here" ng-model="someVal">
+<span>{{someVal}}</span>-->
+<script src="../app/module3.js"></script>
+<script src="../app/module2.js"></script>
+<script src="../app/module1.js"></script>
+</body>
+</html>
